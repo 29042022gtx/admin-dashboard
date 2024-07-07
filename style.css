@@ -1,0 +1,276 @@
+:root {
+  --skyblue: #1992D4; 
+  --smoke: #E2E8F0;
+  --honey: #F0B429;
+  --gray: #777;
+  --light: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  width: 1em;
+}
+
+svg path {
+  fill: currentColor;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+aside {
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: 3em;
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--skyblue);
+}
+
+aside .title {
+  font-size: 1.5em;
+  text-wrap: nowrap;
+}
+
+aside a {
+  display: block;
+  padding: 8px 0;
+}
+
+aside a:nth-child(6) {
+  margin-bottom: 1em;
+}
+
+aside svg {
+  width: 1.2em;
+  vertical-align: bottom;
+  margin-right: 8px;
+}
+
+header {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  padding: 16px;
+}
+
+header * {
+  font-weight: bold;
+}
+
+header > :nth-child(even) {
+  text-align: right;
+}
+
+header .search {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  align-items: center;
+  gap: 4px;
+}
+
+header .search input {
+  width: 100%;
+  padding: 4px 8px;
+  background-color: var(--smoke);
+  border: none;
+  border-radius: 100em;
+}
+
+header .search input:focus {
+  outline: 1px solid var(--gray);
+}
+
+header .noti {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  justify-content: end;
+  grid-auto-flow: column;
+}
+
+header .ava {
+  width: 2em;
+  aspect-ratio: 1;
+  background: url(./images/ava.jpg) no-repeat;
+  background-size: 450%;
+  background-position: 5% 20%;
+}
+
+header .greeting {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  grid-template-columns: 3em 1fr;
+}
+
+header .greeting .ava {
+  min-width: 3em;
+}
+
+header .btns {
+  display: grid;
+  justify-content: end;
+  grid-auto-flow: column;
+  grid-template-columns: auto;
+  gap: 8px;
+}
+
+header .btns button {
+  padding: 4px 16px;
+  color: white;
+  background-color: var(--skyblue);
+  border: none;
+  border-radius: 100em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 16px;
+  gap: 16px;
+  background-color: var(--smoke);
+}
+
+main .projects .title,
+main .annoucements .title,
+main .trending .title {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+main .projects .wrapper {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main .projects .item {
+  background-color: white;
+  padding: 24px 8px;
+  overflow: hidden;
+  border-left: 8px solid var(--honey);
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px var(--light);
+}
+
+main .projects .item .name,
+main .annoucements .item .name,
+main .trending .item .name {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main .projects .item .content,
+main .annoucements .item .content {
+  height: 5em;
+  line-height: 1em;
+  color: var(--gray);
+  overflow: hidden;
+}
+
+main .projects .item .functions {
+  width: 100%;
+  margin-top: 4px;
+  text-align: right;
+  text-wrap: nowrap;
+  word-spacing: 8px;
+  background-color: inherit;
+}
+
+main .annoucements .wrapper,
+main .trending .wrapper {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+main .annoucements .item {
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--light);
+}
+
+main .annoucements .item:last-child {
+  margin: 0;
+  border: none;
+}
+
+main .annoucements .item .content {
+  height: 3em;
+}
+
+main .trending .item {
+  display: grid;
+  gap: 0 8px;
+  grid-template-columns: 2em 1fr;
+  grid-template-rows: 1.2em 1em;
+  margin-bottom: 12px;
+}
+
+main .trending .item .ava {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  background: url(./images/ava.jpg) no-repeat;
+  background-size: 450%;
+  background-position: 5% 20%;
+}
+
+main .trending .item .ava1 {
+  background-position: 35% 20%;
+}
+
+main .trending .item .ava2 {
+  background-position: 65% 20%;
+}
+
+main .trending .item .ava3 {
+  background-position: 95% 20%;
+}
+
+main .trending .item .ava4 {
+  background-position: 5% 80%;
+}
+
+main .trending .item .thought {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* body {
+    grid-template-columns: none;
+  }
+
+  aside {
+    display: none;
+  } */
+
+
+}
